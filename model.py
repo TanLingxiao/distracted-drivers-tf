@@ -69,7 +69,7 @@ class Model:
 
         self.saver = tf.train.Saver(max_to_keep=1)
 
-        self.sess.run(tf.initialize_all_variables())
+        self.sess.run(tf.initialize_global_variables())
 
         summary_run_path = os.path.join(SUMMARY_PATH, str(int(time.time())))
         self.summary_writer = tf.train.SummaryWriter(summary_run_path, self.sess.graph_def)
